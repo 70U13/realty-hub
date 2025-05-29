@@ -7,6 +7,7 @@ import HomePage from "./Home";
 import Layout from "./Layout";
 import "../layout/fonts.css";
 import "../layout/styles.css";
+import "../layout/buttons.css";
 
 const router = createBrowserRouter([
     {

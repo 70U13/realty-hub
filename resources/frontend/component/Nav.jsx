@@ -13,15 +13,15 @@ const Nav = () => {
         <div className="flex items-center
             gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-14 
             text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px]">
-            <p>Properties</p>
-            <p>For Agents</p>
-            <p>FAQs</p>
-            <p className="py-2 px-6 rounded-full bg-[#EA906C] nav-2
+            <p className="cursor-pointer">Properties</p>
+            <p className="cursor-pointer">For Agents</p>
+            <p className="cursor-pointer">FAQs</p>
+            <p className="py-2 px-6 rounded-full bg-[#EA906C] nav-2 cursor-pointer
             text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px]">Contact Us</p>
         </div>
     </div>
     </>
-  )
+    )
 };
 
 export default Nav;
