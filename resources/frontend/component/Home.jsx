@@ -3,7 +3,7 @@ import Navbar from "./Nav";
 const Home = () => {
   return (
     <>
-      <div className="">
+      <div className="flex justify-center items-center">
         <Navbar />
       </div>
     </>
