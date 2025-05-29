@@ -3,7 +3,9 @@ import Navbar from "./Nav";
 const Home = () => {
   return (
     <>
-      <Navbar />
+      <div className="">
+        <Navbar />
+      </div>
     </>
   );
 };

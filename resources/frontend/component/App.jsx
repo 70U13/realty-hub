@@ -11,7 +11,7 @@ import "../layout/styles.css";
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <HomePage />,
+        element: <Layout />,
         //errorElement: <ErrorPage />,
         children: [ 
             {

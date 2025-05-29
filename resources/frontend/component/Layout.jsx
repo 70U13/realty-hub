@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 const Layout = () => {
 
   return (
-    <div className="relative flex flex-col min-h-screen sm:bg-[#FAFAFA] bg-[#FFFFFF]">
+    <div className="relative flex flex-col min-h-screen bg-[#EEE2DE]">
       {/* Main Content */}
       <main className="flex-grow">
         <Outlet />
