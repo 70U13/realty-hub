@@ -5,6 +5,8 @@ import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import HomePage from "./Home";
 import Layout from "./Layout";
+import SignUp from "./form/Registration";
+import AgentPage from "./Agents";
 import "../layout/fonts.css";
 import "../layout/styles.css";
 import "../layout/buttons.css";
@@ -18,6 +20,14 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <HomePage />,
+            },
+            {
+                path: "/agents",
+                element: <AgentPage />,
+            },
+            {
+                path: "/signup",
+                element: <SignUp />,
             },
             /*
             {

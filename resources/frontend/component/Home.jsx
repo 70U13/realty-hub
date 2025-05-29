@@ -1,14 +1,14 @@
 import { useState, useRef, useEffect } from "react";
 import { Outlet, useNavigate, Link } from 'react-router-dom'
-import Navbar from "./Nav";
-import SignUp from "./form/Registration";
+
+
+import Agent from "./Agents";
 
 const Home = () => {
   return (
     <>
       <div className="flex flex-col justify-center items-center">
-        <Navbar />
-        <SignUp />
+        <Agent />
       </div>
     </>
   );
