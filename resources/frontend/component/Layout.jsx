@@ -7,7 +7,7 @@ const Layout = () => {
   return (
     <div className="relative flex flex-col justify-center items-center min-h-screen bg-[#EEE2DE]">
 
-      {/*<Navbar/>*/}
+      {/* Navigation Bar */}
       <Navbar />
 
       {/* Main Content */}

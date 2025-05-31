@@ -162,7 +162,7 @@ const Registration = () => {
             </div>  
         </div>
 
-        {/* BUTTONS */}
+        {/* CTA BUTTONS */}
         <div className="flex flex-col sm:flex-row w-full gap-4 sm:gap-8 justify-left items-center">
             <button className="w-full md:w-auto py-4 px-12 border border-gray-400 rounded-[10px] bg-white text-[20px] form-btn-1">Cancel</button>
             <button className="w-full md:w-auto py-4 px-12 rounded-[10px] bg-[#EA906C] text-[20px] form-btn-2 hover:bg-[#f0a686] transition-colors duration-300">Sign Up</button>
