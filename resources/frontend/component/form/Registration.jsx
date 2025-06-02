@@ -4,28 +4,59 @@ import profile from "../../../image/profile/logo3.png";
 
 const Registration = () => {
     const [formData, setFormData] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        bio: "",
-        docs1: "",
-        docs2: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    contactNumber: "",
+  });
+
+  const [profileImage, setProfileImage] = useState(null);
+  const [preview, setPreview] = useState(null);
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setProfileImage(file);
+    setPreview(URL.createObjectURL(file));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const data = new FormData();
+    data.append("first_name", formData.firstName);
+    data.append("last_name", formData.lastName);
+    data.append("email", formData.email);
+    data.append("contact_number", formData.contactNumber);
+    if (profileImage) data.append("profile_picture", profileImage);
+
+    const response = await fetch("/api/register", {
+      method: "POST",
+      body: data,
     });
 
-    const handleChange = (e) => {
-        setFormData({ 
-        ...formData, 
-        [e.target.name]: e.target.value 
-        });
-    };
+    // handle response...
+  };
 
     return (
     <>
     <div className="flex flex-col px-10 my-16 md:my-20 lg:my-28 w-full gap-16 lg:gap-20
         max-w-[500px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[800px] xl:max-w-[900px]">
-        
-        {/* PART 1 */}
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+            <input type="text" placeholder="First Name" onChange={e => setFormData({...formData, firstName: e.target.value})} className="input" />
+            <input type="text" placeholder="Last Name" onChange={e => setFormData({...formData, lastName: e.target.value})} className="input" />
+            <input type="email" placeholder="Email" onChange={e => setFormData({...formData, email: e.target.value})} className="input" />
+            <input type="text" placeholder="Contact Number" onChange={e => setFormData({...formData, contactNumber: e.target.value})} className="input" />
+            
+            <input type="file" accept="image/*" onChange={handleImageChange} className="file-input" />
+            {preview && <img src={preview} alt="Preview" className="w-24 h-24 object-cover rounded-full" />}
+            
+            <div className="flex flex-col sm:flex-row w-full gap-4 sm:gap-8 justify-left items-center">
+                <button className="w-full md:w-auto py-4 px-12 border border-gray-400 rounded-[10px] bg-white text-[20px] form-btn-1">Cancel</button>
+                <button type="submit" className="w-full md:w-auto py-4 px-12 rounded-[10px] bg-[#EA906C] text-[20px] form-btn-2 hover:bg-[#f0a686] transition-colors duration-300">Sign Up</button>
+            </div>
+        </form>
+        {/* PART 1 
         <div className="flex flex-col gap-8 w-full">
             <div className="flex flex-col w-full justify-center">
                 <p className="text-[22px] md:text-[22px] lg:text-[26px] xl:text-[30px] form-1">Personal Info</p>
@@ -108,8 +139,8 @@ const Registration = () => {
                 
             </div>
         </div>
-
-        {/* PART 2 */}
+        */}
+        {/* PART 2
         <div className="flex flex-col gap-8 w-full">
             <div className="flex flex-col w-full justify-center">
                 <p className="text-[22px] md:text-[22px] lg:text-[26px] xl:text-[30px] form-1">Profile</p>
@@ -161,12 +192,14 @@ const Registration = () => {
                 </div>
             </div>  
         </div>
+        */}
 
-        {/* CTA BUTTONS */}
+        {/* CTA BUTTONS
         <div className="flex flex-col sm:flex-row w-full gap-4 sm:gap-8 justify-left items-center">
             <button className="w-full md:w-auto py-4 px-12 border border-gray-400 rounded-[10px] bg-white text-[20px] form-btn-1">Cancel</button>
-            <button className="w-full md:w-auto py-4 px-12 rounded-[10px] bg-[#EA906C] text-[20px] form-btn-2 hover:bg-[#f0a686] transition-colors duration-300">Sign Up</button>
+            <button type="submit" className="w-full md:w-auto py-4 px-12 rounded-[10px] bg-[#EA906C] text-[20px] form-btn-2 hover:bg-[#f0a686] transition-colors duration-300">Sign Up</button>
         </div>
+        */}
     </div>
     
     </>
